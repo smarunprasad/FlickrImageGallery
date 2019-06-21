@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+struct Constants {
+    
+    struct AppName {
+        
+        static let appName = "FlickrImageGallery"
+    }
+    
+    struct Color {
+        
+        static let primaryColor = "FFFFFF"
+        static let secondaryColor = "000000"
+        
+    }
+}

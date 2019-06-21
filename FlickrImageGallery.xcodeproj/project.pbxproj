@@ -22,6 +22,7 @@
 		F4B3B2B022BD2C25007C3655 /* FlickrListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B3B2AE22BD2C25007C3655 /* FlickrListTableViewCell.xib */; };
 		F4B3B2B222BD2C40007C3655 /* FlickrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2B122BD2C40007C3655 /* FlickrViewModel.swift */; };
 		F4B3B2B522BD2CF5007C3655 /* FlickrListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2B422BD2CF5007C3655 /* FlickrListDataSource.swift */; };
+		F4B3B2B722BD2DC5007C3655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2B622BD2DC5007C3655 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		F4B3B2AE22BD2C25007C3655 /* FlickrListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrListTableViewCell.xib; sourceTree = "<group>"; };
 		F4B3B2B122BD2C40007C3655 /* FlickrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrViewModel.swift; sourceTree = "<group>"; };
 		F4B3B2B422BD2CF5007C3655 /* FlickrListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrListDataSource.swift; sourceTree = "<group>"; };
+		F4B3B2B622BD2DC5007C3655 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		F4B3B29822BD1065007C3655 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3B2B622BD2DC5007C3655 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4B3B27A22BD0E8D007C3655 /* ViewController.swift in Sources */,
+				F4B3B2B722BD2DC5007C3655 /* Constants.swift in Sources */,
 				F4B3B2B522BD2CF5007C3655 /* FlickrListDataSource.swift in Sources */,
 				F4B3B2B222BD2C40007C3655 /* FlickrViewModel.swift in Sources */,
 				F4B3B2A922BD1297007C3655 /* APIRouter.swift in Sources */,
