@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct FlikrFeedModel: Codable {
+struct FlickrFeedModel: Codable {
     
     var flickrFeed: [FlickrFeed]!
     

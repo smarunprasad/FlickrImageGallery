@@ -15,5 +15,65 @@ class FlickrViewModel {
     }
     
     var alertDelegate: AlertDelegate?
-    var flikrFeedModel: FlikrFeedModel!
+    var flikrFeedModel: FlickrFeedModel!
+    
+    
+    func getDataFromService() {
+        
+        self.flikrFeedModel = FlickrFeedModel()
+        //callback block for the API call
+        loadDatafromService { (_ model) in
+            
+            // If the flickr feed have the proper values then set it to the flikrFeedModel object
+            if model.flickrFeed != nil && model.flickrFeed.isEmpty == false {
+                
+                self.flikrFeedModel = model
+            }
+            // call back block for the view controller
+            self.reloadDataBlock()
+        }
+    }
+    
+    private func loadDatafromService(completionBlock: @escaping (FlickrFeedModel) -> Void) {
+        
+        //Checking Network connection
+        if !(APIManager.isConnectedToNetwork()) {
+            
+            //Show Alert if there is no network connection
+            self.alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet, completionBlock: {
+                self.reloadDataBlock()
+            })
+        }
+        else {
+            
+            APIManager.getPublicFeeds { (success, result) in
+                
+                switch result {
+                case .success(let response):
+                    
+                    // If response.flickrFeed containst value then pass the value
+                    if response.flickrFeed != nil && response.flickrFeed.isEmpty == false {
+                        
+                        completionBlock(response)
+                    }
+                    else {
+                        
+                        // If response.flickrFeed is not contains value then pass empty and show alert
+                        completionBlock(FlickrFeedModel())
+                        self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                        })
+                    }
+                    break
+                case .failure:
+                    
+                    // If response.flickrFeed is not contains value then pass empty and show alert
+                    completionBlock(FlickrFeedModel())
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                    })
+                    
+                    break
+                }
+            }
+        }
+    }
 }

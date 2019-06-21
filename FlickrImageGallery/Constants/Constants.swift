@@ -22,6 +22,11 @@ struct Constants {
         
     }
     
+    struct image {
+        
+        static let no_profile_image = "icon_no_profile"
+        
+    }
     struct Keys {
         
         static let cancel = "Cancel"
@@ -33,5 +38,11 @@ struct Constants {
         static let noInternet = "Pease check your network connection"
         static let simulator = "Unable to call from the simulator"
         static let somethinWrong = "Something went wrong. Please try again"
+    }
+    
+    struct AppDateFormate {
+        
+        static let appDateFormate = "MMM dd, yyyy"
+        
     }
 }

@@ -39,7 +39,7 @@ final class APIManager {
     }
     
     @discardableResult
-    static func getItunesSearchList(term: String, entity: String = "",completionHandler:@escaping (Bool, Result<FlikrFeedModel,HDError>) -> Void) -> URLSessionDataTask {
+    static func getPublicFeeds(completionHandler:@escaping (Bool, Result<FlickrFeedModel,HDError>) -> Void) -> URLSessionDataTask {
         return APIClient.shared.dataRequest(router: .getPublicFeeds, completionHandler: completionHandler)
     }
 }
