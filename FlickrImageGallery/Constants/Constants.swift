@@ -21,4 +21,17 @@ struct Constants {
         static let secondaryColor = "000000"
         
     }
+    
+    struct Keys {
+        
+        static let cancel = "Cancel"
+        static let ok = "Ok"
+    }
+    
+    struct Message {
+        
+        static let noInternet = "Pease check your network connection"
+        static let simulator = "Unable to call from the simulator"
+        static let somethinWrong = "Something went wrong. Please try again"
+    }
 }

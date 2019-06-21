@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class FlickrViewModel {
+    
+    var reloadDataBlock: (() -> Void) = {
+        
+    }
+    
+    var alertDelegate: AlertDelegate?
+    var flikrFeedModel: FlikrFeedModel!
+}

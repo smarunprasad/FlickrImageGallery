@@ -8,11 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
+    var flickrViewModel: FlickrViewModel!
+    var homeDataSource = FlickrListDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
+        
+        setUpUI()
+        setUpModel()
+    }
+    
+    func setUpUI() {
+        
+        
+    }
+    
+    func setUpModel() {
+        
     }
 
 

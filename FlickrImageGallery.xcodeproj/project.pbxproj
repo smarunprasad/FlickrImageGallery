@@ -23,6 +23,8 @@
 		F4B3B2B222BD2C40007C3655 /* FlickrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2B122BD2C40007C3655 /* FlickrViewModel.swift */; };
 		F4B3B2B522BD2CF5007C3655 /* FlickrListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2B422BD2CF5007C3655 /* FlickrListDataSource.swift */; };
 		F4B3B2B722BD2DC5007C3655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2B622BD2DC5007C3655 /* Constants.swift */; };
+		F4B3B2B922BD2FF2007C3655 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2B822BD2FF2007C3655 /* BaseViewController.swift */; };
+		F4B3B2BB22BD390F007C3655 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B2BA22BD390F007C3655 /* ViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		F4B3B2B122BD2C40007C3655 /* FlickrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrViewModel.swift; sourceTree = "<group>"; };
 		F4B3B2B422BD2CF5007C3655 /* FlickrListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrListDataSource.swift; sourceTree = "<group>"; };
 		F4B3B2B622BD2DC5007C3655 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F4B3B2B822BD2FF2007C3655 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F4B3B2BA22BD390F007C3655 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 		F4B3B29922BD106C007C3655 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3B2BA22BD390F007C3655 /* ViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B3B27922BD0E8D007C3655 /* ViewController.swift */,
+				F4B3B2B822BD2FF2007C3655 /* BaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,8 +343,10 @@
 				F4B3B2B522BD2CF5007C3655 /* FlickrListDataSource.swift in Sources */,
 				F4B3B2B222BD2C40007C3655 /* FlickrViewModel.swift in Sources */,
 				F4B3B2A922BD1297007C3655 /* APIRouter.swift in Sources */,
+				F4B3B2B922BD2FF2007C3655 /* BaseViewController.swift in Sources */,
 				F4B3B2AF22BD2C25007C3655 /* FlickrListTableViewCell.swift in Sources */,
 				F4B3B2A722BD1266007C3655 /* APIConstants.swift in Sources */,
+				F4B3B2BB22BD390F007C3655 /* ViewController+Extension.swift in Sources */,
 				F4B3B27822BD0E8D007C3655 /* AppDelegate.swift in Sources */,
 				F4B3B2A322BD1212007C3655 /* APIClient.swift in Sources */,
 				F4B3B2AB22BD1D23007C3655 /* FlikrFeedModel.swift in Sources */,

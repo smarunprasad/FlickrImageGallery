@@ -10,6 +10,8 @@ import UIKit
 
 class FlickrListTableViewCell: UITableViewCell {
 
+    static let identifier = "FlickrListTableViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,8 @@ class FlickrListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupCellWithData(flickrFeed: FlickrFeed) {
+        
+        
+    }
 }
