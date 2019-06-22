@@ -1,17 +1,30 @@
 //
-//  FlickrImageGalleryTests.swift
+//  ViewControllerTest.swift
 //  FlickrImageGalleryTests
 //
-//  Created by Arunprasat Selvaraj on 21/06/2019.
+//  Created by Arunprasat Selvaraj on 22/06/2019.
 //  Copyright © 2019 Arunprasat Selvaraj. All rights reserved.
 //
 
 import XCTest
 @testable import FlickrImageGallery
 
-class FlickrImageGalleryTests: XCTestCase {
+class ViewControllerTest: XCTestCase {
 
+    var viewController: UIViewController!
+    
     override func setUp() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        viewController = navigationController.topViewController
+        
+        UIApplication.shared.keyWindow?.rootViewController = viewController
+        
+        // Test and Load the View at the Same Time!
+        XCTAssertNotNil(navigationController.view)
+        XCTAssertNotNil(viewController?.view)
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -19,7 +32,9 @@ class FlickrImageGalleryTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testViewControllerContainsView() {
+        
+        XCTAssertNotNil(viewController.view, "view should contains a view")
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

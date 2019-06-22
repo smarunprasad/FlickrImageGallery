@@ -15,21 +15,21 @@ class FlickrViewModel {
     }
     
     var alertDelegate: AlertDelegate?
-    var flikrFeedModel: FlickrFeedModel!
+    var flickrFeedModel: FlickrFeedModel!
     
 }
 extension FlickrViewModel {
     
     func getDataFromService() {
         
-        self.flikrFeedModel = FlickrFeedModel()
+        self.flickrFeedModel = FlickrFeedModel()
         //callback block for the API call
         loadDatafromService { (_ model) in
             
             // If the flickr feed have the proper values then set it to the flikrFeedModel object
             if model.flickrFeed != nil && model.flickrFeed.isEmpty == false {
                 
-                self.flikrFeedModel = model
+                self.flickrFeedModel = model
             }
             // call back block for the view controller
             self.reloadDataBlock()

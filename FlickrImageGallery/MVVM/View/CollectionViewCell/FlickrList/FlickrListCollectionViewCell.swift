@@ -26,8 +26,14 @@ class FlickrListCollectionViewCell: UICollectionViewCell {
 
     func setupCellWithData(flickrFeed: FlickrFeed) {
         
-        let str = String(flickrFeed.author.split(separator: "\"")[1]).dropLast()
-        authorName.text = String(str)
+        if flickrFeed.author.contains("\"") {
+            
+            let str = String(flickrFeed.author.split(separator: "\"")[1]).dropLast()
+            authorName.text = String(str)
+        }
+        else {
+            authorName.text = flickrFeed.author
+        }
         publishedDate.text = flickrFeed.published.convertDateFormater()
         
         //feed image

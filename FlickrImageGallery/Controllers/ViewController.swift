@@ -51,7 +51,7 @@ class ViewController: BaseViewController {
         flickrViewModel.reloadDataBlock = { [weak self] in
             
             // Pass the value to the datasouce and relode the table view
-            if let flickerFeed = self?.flickrViewModel.flikrFeedModel.flickrFeed {
+            if let flickerFeed = self?.flickrViewModel.flickrFeedModel.flickrFeed {
            
                 self?.flickrDataSource.flickrFeed = flickerFeed
                 self?.view.hideLoadingIndicator()

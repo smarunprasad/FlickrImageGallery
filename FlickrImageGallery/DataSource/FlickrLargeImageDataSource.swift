@@ -23,8 +23,14 @@ class FlickrLargeImageDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let aCell = collectionView.dequeueReusableCell(withReuseIdentifier: FlickrLargeListCollectionViewCell.identifier, for: indexPath) as? FlickrLargeListCollectionViewCell
         
-        let str = String(flickrFeed[indexPath.item].author.split(separator: "\"")[1]).dropLast()
-        changeTitle(String(str))
+        if flickrFeed[indexPath.item].author.contains("\"") {
+            
+            let str = String(flickrFeed[indexPath.item].author.split(separator: "\"")[1]).dropLast()
+            changeTitle(String(str))
+        }
+        else {
+            changeTitle(flickrFeed[indexPath.item].author)
+        }
         
         // Passing the value to cell
         aCell?.setupCellWithData(flickrFeed: flickrFeed[indexPath.item])

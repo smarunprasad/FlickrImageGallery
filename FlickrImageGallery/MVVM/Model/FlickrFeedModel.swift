@@ -25,7 +25,6 @@ struct FlickrFeed: Codable {
     var published: String!
     var author: String!
     var author_id: String!
-    var description: String!
 }
 
 struct Media: Codable {

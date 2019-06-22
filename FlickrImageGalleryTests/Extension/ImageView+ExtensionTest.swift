@@ -45,9 +45,9 @@ class ImageViewExtensionTest: XCTestCase {
         
         let expectation = XCTestExpectation(description: "testImageDownLoadForInValidValidData")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
             
-            self.imageView.download(urlString: "https://live.staticflickr.com///", placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
+            self.imageView.download(urlString: "https://livestaticflickr.com///", placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
                 XCTAssertEqual(success, false, "The url not contain the valid image")
             }
             expectation.fulfill()
