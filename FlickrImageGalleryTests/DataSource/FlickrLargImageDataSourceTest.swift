@@ -16,14 +16,18 @@ class FlickrLargImageDataSourceTest: XCTestCase {
     
     override func setUp() {
         
+        self.datasource.flickrFeed = mokeData()
+
+        let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LargeImageViewController") as? LargeImageViewController
+        viewController?.loadViewIfNeeded()
+        viewController?.flickrFeed = self.datasource.flickrFeed
+        viewController?.selectedIndex = 0
+
+        self.collectionView = viewController?.collectionView
         self.collectionView?.dataSource = datasource
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let size = CGRect(x: 0, y: 0, width: 100, height: 100)
-        collectionView = UICollectionView(frame: size, collectionViewLayout: layout)
-        
-        datasource.flickrFeed = mokeData()
         self.collectionView?.register(UINib.init(nibName: FlickrLargeListCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FlickrLargeListCollectionViewCell.identifier)
-        
+      
+
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     

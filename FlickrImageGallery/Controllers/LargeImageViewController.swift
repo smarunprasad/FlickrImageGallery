@@ -45,7 +45,9 @@ class LargeImageViewController: BaseViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             
-            self.collectionView.scrollToItem(at: IndexPath.init(item: self.selectedIndex, section: 0), at: .centeredHorizontally, animated: false)
+            if !(self.flickrDataSource.flickrFeed.isEmpty) {
+                self.collectionView.scrollToItem(at: IndexPath.init(item: self.selectedIndex, section: 0), at: .centeredHorizontally, animated: false)
+            }
         }
         
     }

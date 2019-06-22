@@ -59,7 +59,7 @@ class ImageViewExtensionTest: XCTestCase {
         
         let expectation = XCTestExpectation(description: "testImageDownLoadForEmptyData")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
             
             self.imageView.download(urlString: "", placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
                 XCTAssertEqual(success, false, "The url is empty")

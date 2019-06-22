@@ -16,7 +16,7 @@ class FlickrViewModelTest: XCTestCase {
     override func setUp() {
         
         viewModel = FlickrViewModel()
-        viewModel.getDataFromService()
+        viewModel.flickrFeedModel = mokeData()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -28,20 +28,62 @@ class FlickrViewModelTest: XCTestCase {
     
     func testloadDataMethode() {
         
-        let expectation = XCTestExpectation(description: "testloadDataMethode")
+      //  let expectation = XCTestExpectation(description: "testloadDataMethode")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
             
-            XCTAssertNotNil(self.viewModel.flickrFeedModel, "projectsContant should not be nil")
-            XCTAssertNotNil(self.viewModel.flickrFeedModel.flickrFeed, "projects should not be nil")
-            XCTAssertGreaterThan(self.viewModel.flickrFeedModel.flickrFeed?.count ?? 0, 0, "projects.count should be greater than 0")
+            XCTAssertNotNil(self.viewModel.flickrFeedModel, "flickrFeedModel should not be nil")
+            XCTAssertNotNil(self.viewModel.flickrFeedModel.flickrFeed, "flickrFeed should not be nil")
+            XCTAssertGreaterThan(self.viewModel.flickrFeedModel.flickrFeed?.count ?? 0, 0, "flickrFeed should be greater than 0")
             
-            expectation.fulfill()
+          //  expectation.fulfill()
         })
         
-        wait(for: [expectation], timeout: 30)
+       // wait(for: [expectation], timeout: 10)
     }
 
+    func mokeData()-> FlickrFeedModel {
+        
+        
+        let jsonData = """
+        {
+        "title": "Uploads from everyone",
+        "link": "https://www.flickr.com/photos/",
+        "description": "",
+        "modified": "2019-06-22T14:04:39Z",
+        "generator": "https://www.flickr.com",
+        "items": [
+        {
+        "title": " ",
+        "link": "https://www.flickr.com/photos/monicagirard/48108325221/",
+        "media": {
+        "m": "https://live.staticflickr.com/65535/48108325221_8526649b4b_m.jpg"
+        },
+        "date_taken": "2018-12-19T11:50:55-08:00",
+        "published": "2019-06-22T14:04:39Z",
+        "author": "monica girard",
+        "author_id": "66143078@N00",
+        "tags": ""
+        }
+        ]
+        }
+        """
+        
+        
+        if let data = jsonData.data(using: .utf8, allowLossyConversion: true) {
+            
+            do {
+                let json = try JSONDecoder().decode(FlickrFeedModel.self, from: data)
+                print(json)
+                return json
+            }
+            catch {
+                print(error)
+            }
+        }
+        return FlickrFeedModel()
+        
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
