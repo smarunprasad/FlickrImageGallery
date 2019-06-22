@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="141" height="208"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_no_image" translatesAutoresizingMaskIntoConstraints="NO" id="N3k-W0-WdA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_no_image" translatesAutoresizingMaskIntoConstraints="NO" id="N3k-W0-WdA">
                         <rect key="frame" x="0.0" y="0.0" width="141" height="156"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yid-ed-XTH">
@@ -57,7 +57,6 @@
                 <constraint firstAttribute="trailing" secondItem="yid-ed-XTH" secondAttribute="trailing" id="bsa-Xy-S1E"/>
                 <constraint firstAttribute="trailing" secondItem="N3k-W0-WdA" secondAttribute="trailing" id="nah-kM-Tlm"/>
                 <constraint firstItem="yid-ed-XTH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oJ0-QU-pOS"/>
-                <constraint firstAttribute="bottom" secondItem="N3k-W0-WdA" secondAttribute="bottom" priority="999" id="oSh-R7-LoH"/>
                 <constraint firstAttribute="bottom" secondItem="yid-ed-XTH" secondAttribute="bottom" id="s5a-jW-afe"/>
                 <constraint firstItem="yid-ed-XTH" firstAttribute="top" secondItem="N3k-W0-WdA" secondAttribute="bottom" id="uC9-eH-99Q"/>
             </constraints>
