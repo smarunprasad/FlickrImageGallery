@@ -24,7 +24,7 @@ enum APIRouter {
 extension APIRouter: URLRequestConvertible {
     
     typealias Parameters = [String: Any]
-    
+
     private var baseURL: String {
         
         guard let infoDictPath = Bundle.main.path(forResource: "Info", ofType: "plist") else { return "" }
@@ -38,12 +38,12 @@ extension APIRouter: URLRequestConvertible {
             return .get
         }
     }
+
     
     func asURLRequest() -> URLRequest {
         
         var urlRequest = URLRequest(url: URL.init(string: baseURL)!)
         urlRequest.httpMethod = method.value
-        
         return urlRequest
     }
 }

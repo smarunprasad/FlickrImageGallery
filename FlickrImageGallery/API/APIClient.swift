@@ -23,7 +23,8 @@ final class APIClient {
             
             do {
                 
-                let jsonResponse = try JSONDecoder().decode(M.self, from: data)
+                
+                let jsonResponse = try JSONDecoder().decode(M.self, from: self.removeTheUnwantedTextFromTheJson(data: data))
                 completionHandler(true, Result.success(jsonResponse))
                 
             } catch (let error) {
@@ -34,5 +35,13 @@ final class APIClient {
         }
         dataTask.resume()
         return dataTask
+    }
+    
+    
+    func removeTheUnwantedTextFromTheJson(data: Data) -> Data {
+        
+        let invalidJsonString = String.init(data: data, encoding: .utf8)
+        let newdata: Data = invalidJsonString?.dropFirst("jsonFlickrFeed(".count).dropLast().data(using: .utf8) ?? Data()
+        return newdata
     }
 }

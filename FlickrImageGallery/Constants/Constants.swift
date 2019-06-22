@@ -25,7 +25,8 @@ struct Constants {
     struct image {
         
         static let no_profile_image = "icon_no_profile"
-        
+        static let no_feed_image = "icon_no_image"
+
     }
     struct Keys {
         

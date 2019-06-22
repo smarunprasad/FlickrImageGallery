@@ -18,7 +18,6 @@ enum HDError: Error {
     case jsonEncoding
 }
 
-
 protocol URLRequestConvertible {
     /// Returns a URL request or throws if an `Error` was encountered.
     ///

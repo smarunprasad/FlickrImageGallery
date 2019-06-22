@@ -13,11 +13,12 @@ class ViewController: BaseViewController {
     var flickrViewModel: FlickrViewModel!
     var flickrDataSource = FlickrListDataSource()
     
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            self.tableView.dataSource = flickrDataSource
+            self.collectionView.dataSource = flickrDataSource
         }
     }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,10 +30,7 @@ class ViewController: BaseViewController {
     
     func setUpUI() {
         
-        self.tableView.register(UINib.init(nibName: FlickrListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: FlickrListTableViewCell.identifier)
-        self.tableView.tableFooterView = UIView()
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 200
+        self.collectionView.register(UINib.init(nibName: FlikerListCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FlikerListCollectionViewCell.identifier)
     }
     
     func bindValueFromModel() {
@@ -59,10 +57,24 @@ class ViewController: BaseViewController {
                 
                 DispatchQueue.main.async {
                     
-                    self?.tableView.reloadData()
+                    self?.collectionView.reloadData()
                 }
             }
         }
     }
 }
 
+extension ViewController:UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+    }
+}
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize.init(width: self.view.frame.width/2 - 6, height: self.view.frame.width/2 - 6)
+    }
+}

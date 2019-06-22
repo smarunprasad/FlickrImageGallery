@@ -17,6 +17,8 @@ class FlickrViewModel {
     var alertDelegate: AlertDelegate?
     var flikrFeedModel: FlickrFeedModel!
     
+}
+extension FlickrViewModel {
     
     func getDataFromService() {
         
@@ -33,7 +35,7 @@ class FlickrViewModel {
             self.reloadDataBlock()
         }
     }
-    
+
     private func loadDatafromService(completionBlock: @escaping (FlickrFeedModel) -> Void) {
         
         //Checking Network connection

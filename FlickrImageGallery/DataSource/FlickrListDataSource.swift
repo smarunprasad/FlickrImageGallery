@@ -9,21 +9,19 @@
 import Foundation
 import UIKit
 
-class FlickrListDataSource: NSObject, UITableViewDataSource {
-    
+class FlickrListDataSource: NSObject, UICollectionViewDataSource {
+  
     var flickrFeed = [FlickrFeed]()
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flickrFeed.isEmpty == false ? (section == 3) ? 2 : 1 : 0
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return flickrFeed.isEmpty == false ? flickrFeed.count : 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let aCell = collectionView.dequeueReusableCell(withReuseIdentifier: FlikerListCollectionViewCell.identifier, for: indexPath) as? FlikerListCollectionViewCell
         
-            let aCell = tableView.dequeueReusableCell(withIdentifier: FlickrListTableViewCell.identifier) as? FlickrListTableViewCell
-            
-            // Passing the value to cell
-            aCell?.setupCellWithData(flickrFeed: flickrFeed[indexPath.row])
-            return aCell!
-            
+        // Passing the value to cell
+        aCell?.setupCellWithData(flickrFeed: flickrFeed[indexPath.item])
+        return aCell!
     }
 }
