@@ -1,5 +1,5 @@
 //
-//  ViewControllerTest.swift
+//  BaseViewControllerTest.swift
 //  FlickrImageGalleryTests
 //
 //  Created by Arunprasat Selvaraj on 22/06/2019.
@@ -9,22 +9,12 @@
 import XCTest
 @testable import FlickrImageGallery
 
-class ViewControllerTest: XCTestCase {
+class BaseViewControllerTest: XCTestCase {
+    
 
-    var viewController: UIViewController!
+    let viewcontroller = BaseViewController()
     
     override func setUp() {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-        viewController = navigationController.topViewController
-        
-        UIApplication.shared.keyWindow?.rootViewController = viewController
-        
-        // Test and Load the View at the Same Time!
-        XCTAssertNotNil(navigationController.view)
-        XCTAssertNotNil(viewController)
-
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -32,13 +22,10 @@ class ViewControllerTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testViewControllerContainsView() {
-        
-        XCTAssertNotNil(viewController.view, "view should contains a view")
+    func testShowAlertMethode() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

@@ -56,7 +56,7 @@ class APIManagerTest: XCTestCase {
         
         guard let infoDictPath = Bundle.main.path(forResource: "Info", ofType: "plist") else { return  }
         var aDictionary = NSDictionary(contentsOfFile: infoDictPath) as? [String : AnyObject]
-        aDictionary?["baseURL"] = "http:itunes" as AnyObject
+        aDictionary?["baseURL"] = "http:liveflickr" as AnyObject
         
         APIManager.getPublicFeeds { (success, result) in
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42FB1A122BEC1E1007BB1D6 /* BaseViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FB1A022BEC1E1007BB1D6 /* BaseViewControllerTest.swift */; };
 		F4B3B27822BD0E8D007C3655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B27722BD0E8D007C3655 /* AppDelegate.swift */; };
 		F4B3B27A22BD0E8D007C3655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3B27922BD0E8D007C3655 /* ViewController.swift */; };
 		F4B3B27D22BD0E8D007C3655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3B27B22BD0E8D007C3655 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F42FB1A022BEC1E1007BB1D6 /* BaseViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTest.swift; sourceTree = "<group>"; };
 		F4B3B27422BD0E8D007C3655 /* FlickrImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3B27722BD0E8D007C3655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3B27922BD0E8D007C3655 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			children = (
 				F4BDC44A22BE9613006ED85A /* ViewControllerTest.swift */,
 				F4BDC44C22BE99D9006ED85A /* LargImageViewControllerTest.swift */,
+				F42FB1A022BEC1E1007BB1D6 /* BaseViewControllerTest.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C2F9D122BE5610005F9560 /* APIManagerTest.swift in Sources */,
+				F42FB1A122BEC1E1007BB1D6 /* BaseViewControllerTest.swift in Sources */,
 				F4C2F9DF22BE7DE7005F9560 /* Color+ExtensionTest.swift in Sources */,
 				F4BDC44D22BE99D9006ED85A /* LargImageViewControllerTest.swift in Sources */,
 				F4BDC44B22BE9613006ED85A /* ViewControllerTest.swift in Sources */,

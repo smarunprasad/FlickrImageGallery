@@ -27,6 +27,7 @@ extension APIRouter: URLRequestConvertible {
 
     private var baseURL: String {
         
+        //baseURL is get from the plist
         guard let infoDictPath = Bundle.main.path(forResource: "Info", ofType: "plist") else { return "" }
         let aDictionary = NSDictionary(contentsOfFile: infoDictPath) as? [String : AnyObject]
         return (aDictionary?["baseURL"] != nil) ?  aDictionary?["baseURL"] as! String  : ""

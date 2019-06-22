@@ -39,13 +39,17 @@ class LargeImageViewController: BaseViewController {
         
         flickrDataSource.flickrFeed = flickrFeed
         
+        //To change the navigation bar title based on the indexpath
         flickrDataSource.changeTitle = { [weak self] (_ string: String) in
             self?.title = string
         }
         
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             
+            //To scroll the particular index if the flickrFeed contains count
             if !(self.flickrDataSource.flickrFeed.isEmpty) {
+                
                 self.collectionView.scrollToItem(at: IndexPath.init(item: self.selectedIndex, section: 0), at: .centeredHorizontally, animated: false)
             }
         }

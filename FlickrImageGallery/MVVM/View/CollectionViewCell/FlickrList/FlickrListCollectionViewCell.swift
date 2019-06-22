@@ -26,6 +26,7 @@ class FlickrListCollectionViewCell: UICollectionViewCell {
 
     func setupCellWithData(flickrFeed: FlickrFeed) {
         
+        //Checked to show the author name only
         if flickrFeed.author.contains("\"") {
             
             let str = String(flickrFeed.author.split(separator: "\"")[1]).dropLast()

@@ -29,6 +29,17 @@ class LargImageViewControllerTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    func testViewControllerContainsView() {
+        
+        let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LargeImageViewController") as? LargeImageViewController
+        viewController?.selectedIndex = 0
+        viewController?.flickrFeed = mokeData()
+        viewController?.loadViewIfNeeded()
+        
+        XCTAssertNotNil(viewController?.view, "view should contains a view")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
     func mokeData()-> [FlickrFeed] {
         
         

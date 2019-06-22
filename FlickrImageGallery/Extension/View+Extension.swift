@@ -24,6 +24,7 @@ extension UIView {
     
     func showLoadingIndicator() {
         
+        // Activity indicator will appear on the view
         let spinnerView = UIView.init(frame: self.bounds)
         spinnerView.backgroundColor = .white
         

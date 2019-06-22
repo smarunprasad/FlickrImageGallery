@@ -28,18 +28,13 @@ class FlickrViewModelTest: XCTestCase {
     
     func testloadDataMethode() {
         
-      //  let expectation = XCTestExpectation(description: "testloadDataMethode")
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
             
             XCTAssertNotNil(self.viewModel.flickrFeedModel, "flickrFeedModel should not be nil")
             XCTAssertNotNil(self.viewModel.flickrFeedModel.flickrFeed, "flickrFeed should not be nil")
             XCTAssertGreaterThan(self.viewModel.flickrFeedModel.flickrFeed?.count ?? 0, 0, "flickrFeed should be greater than 0")
             
-          //  expectation.fulfill()
-        })
-        
-       // wait(for: [expectation], timeout: 10)
+        })        
     }
 
     func mokeData()-> FlickrFeedModel {

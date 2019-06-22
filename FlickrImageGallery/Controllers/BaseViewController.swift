@@ -13,6 +13,7 @@ protocol AlertDelegate {
     func showOkButtonAlert(message: String, completionBlock: @escaping ()-> Void)
 }
 
+//Created to write the comman function for the application
 class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
