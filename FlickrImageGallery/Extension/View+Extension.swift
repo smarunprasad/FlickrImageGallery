@@ -14,7 +14,7 @@ var spinner : UIView?
 extension UIView {
     
     //MARK - View
-    func roundCorner(radius: CGFloat, borderColor color: UIColor) {
+    func roundCorner(radius: CGFloat, borderColor color: UIColor = UIColor.white) {
         
         layer.cornerRadius = radius
         layer.borderWidth = 1
