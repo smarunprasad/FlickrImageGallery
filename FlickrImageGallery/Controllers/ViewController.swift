@@ -75,6 +75,7 @@ class ViewController: BaseViewController {
         
         let navigation = UINavigationController.init(rootViewController: viewController)
         navigation.navigationBar.barStyle = .black
+    
         navigation.navigationBar.tintColor = .white
         present(navigation, animated: true, completion: nil)
     }
