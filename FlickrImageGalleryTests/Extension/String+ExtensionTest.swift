@@ -9,7 +9,7 @@
 import XCTest
 @testable import FlickrImageGallery
 
-class String_ExtensionTest: XCTestCase {
+class StringExtensionTest: XCTestCase {
 
     var string: String?
     

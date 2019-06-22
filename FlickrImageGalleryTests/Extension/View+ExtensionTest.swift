@@ -9,7 +9,7 @@
 import XCTest
 @testable import FlickrImageGallery
 
-class View_ExtensionTest: XCTestCase {
+class ViewExtensionTest: XCTestCase {
 
     var view: UIView!
     

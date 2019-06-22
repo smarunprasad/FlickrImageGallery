@@ -9,7 +9,7 @@
 import XCTest
 @testable import FlickrImageGallery
 
-class ImageView_ExtensionTest: XCTestCase {
+class ImageViewExtensionTest: XCTestCase {
 
     var imageView: UIImageView!
     
@@ -28,7 +28,7 @@ class ImageView_ExtensionTest: XCTestCase {
         
         let expectation = XCTestExpectation(description: "testImageDownLoadForValidData")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() , execute: {
             
             self.imageView.download(urlString: "https://live.staticflickr.com/65535/48108325221_8526649b4b_m.jpg", placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
                 XCTAssertEqual(success, true, "imageview contains the vaid image")

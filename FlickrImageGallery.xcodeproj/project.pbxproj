@@ -37,6 +37,8 @@
 		F4C2F9D522BE7840005F9560 /* View+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2F9D422BE7840005F9560 /* View+ExtensionTest.swift */; };
 		F4C2F9D922BE78AF005F9560 /* ImageView+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2F9D822BE78AF005F9560 /* ImageView+ExtensionTest.swift */; };
 		F4C2F9DB22BE7914005F9560 /* String+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2F9DA22BE7914005F9560 /* String+ExtensionTest.swift */; };
+		F4C2F9DD22BE7BB0005F9560 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2F9DC22BE7BB0005F9560 /* UIColor+Extension.swift */; };
+		F4C2F9DF22BE7DE7005F9560 /* Color+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2F9DE22BE7DE7005F9560 /* Color+ExtensionTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		F4C2F9D422BE7840005F9560 /* View+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ExtensionTest.swift"; sourceTree = "<group>"; };
 		F4C2F9D822BE78AF005F9560 /* ImageView+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+ExtensionTest.swift"; sourceTree = "<group>"; };
 		F4C2F9DA22BE7914005F9560 /* String+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionTest.swift"; sourceTree = "<group>"; };
+		F4C2F9DC22BE7BB0005F9560 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F4C2F9DE22BE7DE7005F9560 /* Color+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ExtensionTest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		F4B3B29922BD106C007C3655 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F4C2F9DC22BE7BB0005F9560 /* UIColor+Extension.swift */,
 				F4B3B2BA22BD390F007C3655 /* ViewController+Extension.swift */,
 				F4B3B2BC22BD402E007C3655 /* View+Extension.swift */,
 				F4B3B2C022BD4082007C3655 /* UIimageView+Extension.swift */,
@@ -311,6 +316,7 @@
 				F4C2F9D422BE7840005F9560 /* View+ExtensionTest.swift */,
 				F4C2F9D822BE78AF005F9560 /* ImageView+ExtensionTest.swift */,
 				F4C2F9DA22BE7914005F9560 /* String+ExtensionTest.swift */,
+				F4C2F9DE22BE7DE7005F9560 /* Color+ExtensionTest.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				F4B3B2AB22BD1D23007C3655 /* FlickrFeedModel.swift in Sources */,
 				F4B3B2BD22BD402E007C3655 /* View+Extension.swift in Sources */,
 				F4B3B2A522BD1247007C3655 /* APIManager.swift in Sources */,
+				F4C2F9DD22BE7BB0005F9560 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C2F9D122BE5610005F9560 /* APIManagerTest.swift in Sources */,
+				F4C2F9DF22BE7DE7005F9560 /* Color+ExtensionTest.swift in Sources */,
 				F4C2F9D322BE73E9005F9560 /* ViewController+ExtensionTest.swift in Sources */,
 				F4C2F9D522BE7840005F9560 /* View+ExtensionTest.swift in Sources */,
 				F4B3B28D22BD0E8F007C3655 /* FlickrImageGalleryTests.swift in Sources */,
