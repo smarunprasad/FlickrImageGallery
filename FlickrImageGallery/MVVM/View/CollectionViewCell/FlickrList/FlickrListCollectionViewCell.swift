@@ -20,7 +20,7 @@ class FlickrListCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.contentView.roundCorner(radius: 5, borderColor: UIColor.black.withAlphaComponent(0.3))
+        self.contentView.roundCorner(radius: 5)
         // Initialization code
     }
 

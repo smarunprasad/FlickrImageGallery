@@ -28,16 +28,13 @@ class ViewExtensionTest: XCTestCase {
     func testRoundView() {
         
         let radius = 2
-        let aColor = UIColor.gray
         
         XCTAssertNotNil(view, "aView should not be nil")
         XCTAssertNotNil(radius, "radius should not be nil")
-        XCTAssertNotNil(aColor, "aColor should not be nil")
         XCTAssertEqual(radius, 2, "radius should be equal to 2")
         
-        view.roundCorner(radius: CGFloat(radius), borderColor: aColor)
+        view.roundCorner(radius: CGFloat(radius))
         XCTAssertEqual(view.layer.cornerRadius , 2, "Radius should be equal to 2")
-        XCTAssertEqual(view.layer.borderColor , aColor.cgColor, "border color should be equal to aColor")
     }
     
     func testLoadingIndicator() {
