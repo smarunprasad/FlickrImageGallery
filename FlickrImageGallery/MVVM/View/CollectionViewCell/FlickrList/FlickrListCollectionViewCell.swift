@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FlikerListCollectionViewCell: UICollectionViewCell {
+class FlickrListCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "FlikerListCollectionViewCell"
+    static let identifier = "FlickrListCollectionViewCell"
 
     @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var feedTitle: UILabel!
@@ -26,10 +26,9 @@ class FlikerListCollectionViewCell: UICollectionViewCell {
 
     func setupCellWithData(flickrFeed: FlickrFeed) {
         
-        //set the value to the outlets
         let str = String(flickrFeed.author.split(separator: "\"")[1]).dropLast()
         authorName.text = String(str)
-        publishedDate.text = flickrFeed.published
+        publishedDate.text = flickrFeed.published.convertDateFormater()
         
         //feed image
         feedImageView.download(urlString: flickrFeed.media.imageURL!, placholderImage: UIImage.init(named: Constants.image.no_feed_image)!) { (success) in

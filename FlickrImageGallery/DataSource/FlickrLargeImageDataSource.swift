@@ -1,24 +1,30 @@
 //
-//  FlickrListDataSource.swift
+//  FlickrLargeImageDataSource.swift
 //  FlickrImageGallery
 //
-//  Created by Arunprasat Selvaraj on 21/06/2019.
+//  Created by Arunprasat Selvaraj on 22/06/2019.
 //  Copyright © 2019 Arunprasat Selvaraj. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class FlickrListDataSource: NSObject, UICollectionViewDataSource {
-  
+class FlickrLargeImageDataSource: NSObject, UICollectionViewDataSource {
+    
     var flickrFeed = [FlickrFeed]()
     
+    var changeTitle: ((_ string: String) -> Void) = {_ in 
+        
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return flickrFeed.isEmpty == false ? flickrFeed.count : 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let aCell = collectionView.dequeueReusableCell(withReuseIdentifier: FlickrListCollectionViewCell.identifier, for: indexPath) as? FlickrListCollectionViewCell
+        let aCell = collectionView.dequeueReusableCell(withReuseIdentifier: FlickrLargeListCollectionViewCell.identifier, for: indexPath) as? FlickrLargeListCollectionViewCell
+        
+        let str = String(flickrFeed[indexPath.item].author.split(separator: "\"")[1]).dropLast()
+        changeTitle(String(str))
         
         // Passing the value to cell
         aCell?.setupCellWithData(flickrFeed: flickrFeed[indexPath.item])

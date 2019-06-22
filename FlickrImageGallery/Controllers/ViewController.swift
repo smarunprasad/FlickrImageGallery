@@ -12,6 +12,7 @@ class ViewController: BaseViewController {
 
     var flickrViewModel: FlickrViewModel!
     var flickrDataSource = FlickrListDataSource()
+    var isForLargImage = false
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -30,7 +31,7 @@ class ViewController: BaseViewController {
     
     func setUpUI() {
         
-        self.collectionView.register(UINib.init(nibName: FlikerListCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FlikerListCollectionViewCell.identifier)
+        self.collectionView.register(UINib.init(nibName: FlickrListCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FlickrListCollectionViewCell.identifier)
     }
     
     func bindValueFromModel() {
@@ -62,12 +63,26 @@ class ViewController: BaseViewController {
             }
         }
     }
+    
+    func moveToLargImageViewController(index: Int) {
+        
+        let viewController: LargeImageViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LargeImageViewController") as! LargeImageViewController
+        viewController.flickrFeed = flickrDataSource.flickrFeed
+        viewController.selectedIndex = index
+        
+        viewController.modalPresentationStyle = .popover
+        viewController.modalTransitionStyle = .crossDissolve
+        
+        let navigation = UINavigationController.init(rootViewController: viewController)
+        present(navigation, animated: true, completion: nil)
+    }
 }
 
 extension ViewController:UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        moveToLargImageViewController(index: indexPath.item)
         
     }
 }
@@ -75,6 +90,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize.init(width: self.view.frame.width/2 - 6, height: self.view.frame.width/2 - 6)
+        if isForLargImage == false {
+            return CGSize.init(width: self.view.frame.width/2 - 6, height: self.view.frame.width/2 - 6)
+        }
+        else {
+            return CGSize.init(width: self.view.frame.width, height: self.view.frame.height)
+        }
     }
 }
