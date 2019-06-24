@@ -12,7 +12,7 @@ class ViewController: BaseViewController {
 
     var flickrViewModel: FlickrViewModel!
     var flickrDataSource = FlickrListDataSource()
-    
+   
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             self.collectionView.dataSource = flickrDataSource
